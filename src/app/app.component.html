@@ -6,7 +6,13 @@
     <h1>Adiós</h1>
   </div>
 </ng-template>
+<h2>Lista de Dramas</h2>
 
+<ul>
+  <li *ngFor="let drama of dramas">
+    {{ drama.name }} ({{ drama.year }}) - ⭐{{ drama.rating }}
+  </li>
+</ul>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->

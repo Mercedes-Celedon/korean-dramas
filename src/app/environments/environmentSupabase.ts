@@ -1,5 +1,5 @@
 export const environmentSupabase = {
     production: false,
-    supabaseUrl: 'https://nelnlrdrbjfjnqqcpptt.supabase.co',
-    supabaseKey: 'YOUR_SUPABASE_KEY',
+    supabaseUrl: import.meta.env.NG_APP_PUBLIC_SUPABASE_URL,
+    supabaseKey: import.meta.env.NG_APP_PUBLIC_SUPABASE_ANON_KEY,
   }

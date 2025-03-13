@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { Drama } from './drama.model';
+import { SupabaseService } from '../app/supabase.service';
 @Component({
   selector: 'nombre-diferente',
   imports: [RouterOutlet, CommonModule],
@@ -19,11 +20,27 @@ import { RouterOutlet } from '@angular/router';
   templateUrl:'./app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  dramas: Drama[] = [];
+
+  constructor(private supabaseService: SupabaseService) {}
+
+  ngOnInit(): void {
+    this.getDramas(); // Aquí llamas a la función para cargar datos
+  }
+
+  async getDramas() {
+    const { data, error } = await this.supabaseService.getDramas();
+    if (error) {
+      console.error('Error al obtener dramas:', error);
+    } else {
+      this.dramas = data || [];
+    }
+  }
 greet() {
 alert('Holi, soy una ventana');
 }
   title = 'my-first-angular-app';
   isLoggedIn = false;
-  lista=[{id:1, title:'Elemento 1'},{id:2, title:'Elemento 2'},{id:2, title:'Elemento 3'}];
+  lista=[{id:1, title:'Elemento 1'},{id:2, title:'Elemento 2'},{id:3, title:'Elemento 3'}];
 }
