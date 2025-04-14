@@ -3,24 +3,20 @@
 </div>
 <ng-template #elseBlock>
   <div>
-    <h1>Adiós</h1>
+    <h1>k-Dramas Top</h1>
   </div>
+  <!-- <div class="card flex justify-center">
+    <p-button label="Check" />
+  </div> -->
 </ng-template>
 <h2>Lista de Dramas</h2>
 
 <ul>
   <li *ngFor="let drama of dramas">
-    {{ drama.name }} ({{ drama.year }}) - ⭐{{ drama.rating }}
+    {{ drama.Name }} ({{ drama.Year}}) - ⭐{{ drama.Rating }}
   </li>
 </ul>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
 <router-outlet />

@@ -5,6 +5,7 @@ import {
 } from '@supabase/supabase-js'
 import { environmentSupabase } from '../app/environments/environmentSupabase'
 import { Drama } from './drama.model';
+import { Database } from '../supabase';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class SupabaseService {
   private supabase: SupabaseClient
 
   constructor() { 
-    this.supabase = createClient(environmentSupabase.supabaseUrl, environmentSupabase.supabaseKey)
+    this.supabase = createClient<Database>(environmentSupabase.supabaseUrl, environmentSupabase.supabaseKey)
   }
 
   async getDramas() {
