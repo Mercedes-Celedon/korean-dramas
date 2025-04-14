@@ -45,7 +45,7 @@ export type Database = {
           Name: string
           Rating: number | null
           Tags: string | null
-          Watchers: string | null
+          Watchers: number | null
           Year: number | null
         }
         Insert: {
@@ -58,7 +58,7 @@ export type Database = {
           Name: string
           Rating?: number | null
           Tags?: string | null
-          Watchers?: string | null
+          Watchers?: number | null
           Year?: number | null
         }
         Update: {
@@ -71,7 +71,7 @@ export type Database = {
           Name?: string
           Rating?: number | null
           Tags?: string | null
-          Watchers?: string | null
+          Watchers?: number | null
           Year?: number | null
         }
         Relationships: []

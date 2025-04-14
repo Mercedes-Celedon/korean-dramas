@@ -4,4 +4,5 @@ export class Drama{
     Name: string = ''; 
     Year: number = 0;
     Rating: number = 0;
+    Watchers: number =0;
 }

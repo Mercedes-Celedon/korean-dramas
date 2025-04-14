@@ -4,7 +4,6 @@ import {
   SupabaseClient,
 } from '@supabase/supabase-js'
 import { environmentSupabase } from '../app/environments/environmentSupabase'
-import { Drama } from './drama.model';
 import { Database } from '../supabase';
 
 @Injectable({
